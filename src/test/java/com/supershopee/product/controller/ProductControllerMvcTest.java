@@ -63,9 +63,9 @@ public class ProductControllerMvcTest {
                 //.andExpect(header().string(HttpHeaders.ETAG, "\"101\""))
 
                 // Validate the returned fields
-                .andExpect(jsonPath("$.code", is("101")))
-                .andExpect(jsonPath("$.name", is("Suger")))
-                .andExpect(jsonPath("$.price", is(75.50)));
+                .andExpect(jsonPath("$.result.code", is("101")))
+                .andExpect(jsonPath("$.result.name", is("Suger")))
+                .andExpect(jsonPath("$.result.price", is(75.50)));
     }
     
     @Test
@@ -96,9 +96,9 @@ public class ProductControllerMvcTest {
                 .andExpect(status().isOk())
 
                 // Validate the returned fields
-                .andExpect(jsonPath("$.code", is("101")))
-                .andExpect(jsonPath("$.name", is("Suger")))
-                .andExpect(jsonPath("$.price", is(80.10)));
+                .andExpect(jsonPath("$.result.code", is("101")))
+                .andExpect(jsonPath("$.result.name", is("Suger")))
+                .andExpect(jsonPath("$.result.price", is(80.10)));
     }
     
     static String asJsonString(final Object obj) {
