@@ -1,0 +1,46 @@
+server:
+  servlet.context-path: /productservice
+  port: 8082
+
+spring:
+  application:
+     name: productservice 
+
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp      
+    pathmatch:
+        matching-strategy : "ANT_PATH_MATCHER"
+        
+  datasource:
+    #username: root
+    #password: ravi@mysql70
+    #url: jdbc:mysql://localhost:3306/supershopee?useSSL=false
+    url: jdbc:h2:mem:supershopee
+    username: sa
+    password: password
+    
+  h2:
+    console:
+       enabled : true
+       path : /h2-console
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+        ddl-auto : create-drop
+    properties :
+        hibernate:
+            format-sql : true
+    
+logging:
+  file: 
+    name: productservice.log
+  level:
+     root: info
+     com.supershopee.product: info
+  pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+      file: "%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%t] %c [%M] - %m%n"              
