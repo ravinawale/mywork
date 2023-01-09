@@ -14,9 +14,6 @@ spring:
         matching-strategy : "ANT_PATH_MATCHER"
         
   datasource:
-    #username: root
-    #password: ravi@mysql70
-    #url: jdbc:mysql://localhost:3306/supershopee?useSSL=false
     url: jdbc:h2:mem:supershopee
     username: sa
     password: password

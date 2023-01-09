@@ -1,22 +1,46 @@
-2023-01-06 12:12:02  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarting] - Starting ProductControllerMvcTest using Java 18.0.1.1 on Ravindra with PID 20956 (started by Ravindra in F:\DevOps\product-service)
-2023-01-06 12:12:02  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStartupProfileInfo] - No active profile set, falling back to 1 default profile: "default"
-2023-01-06 12:12:03  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-06 12:12:03  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interfaces.
-2023-01-06 12:12:05  INFO [main] org.hibernate.jpa.internal.util.LogHelper [logPersistenceUnitInformation] - HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-06 12:12:05  INFO [main] org.hibernate.Version [logVersion] - HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-06 12:12:05  INFO [main] org.hibernate.annotations.common.Version [<clinit>] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-06 12:12:06  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Starting...
-2023-01-06 12:12:06  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Start completed.
-2023-01-06 12:12:06  INFO [main] org.hibernate.dialect.Dialect [<init>] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-06 12:12:07  INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [initiateService] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-06 12:12:07  INFO [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [buildNativeEntityManagerFactory] - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-06 12:12:08  WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [openEntityManagerInViewInterceptor] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-06 12:12:08  INFO [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [logDataSources] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:supershopee'
-2023-01-06 12:12:10  INFO [main] org.springframework.boot.test.mock.web.SpringBootMockServletContext [log] - Initializing Spring TestDispatcherServlet ''
-2023-01-06 12:12:10  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Initializing Servlet ''
-2023-01-06 12:12:10  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Completed initialization in 7 ms
-2023-01-06 12:12:10  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarted] - Started ProductControllerMvcTest in 8.903 seconds (JVM running for 12.586)
-2023-01-06 12:12:11  INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [destroy] - Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-06 12:12:11  INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [perform] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-01-06 12:12:11  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown initiated...
-2023-01-06 12:12:11  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown completed.
+2023-01-09 12:44:32  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarting] - Starting ProductControllerMvcTest using Java 18.0.1.1 on Ravindra with PID 29484 (started by Ravindra in F:\DevOps\product-service)
+2023-01-09 12:44:32  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStartupProfileInfo] - No active profile set, falling back to 1 default profile: "default"
+2023-01-09 12:44:33  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 12:44:33  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-01-09 12:44:34  INFO [main] org.hibernate.jpa.internal.util.LogHelper [logPersistenceUnitInformation] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 12:44:34  INFO [main] org.hibernate.Version [logVersion] - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-09 12:44:34  INFO [main] org.hibernate.annotations.common.Version [<clinit>] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 12:44:34  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Starting...
+2023-01-09 12:44:34  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Start completed.
+2023-01-09 12:44:34  INFO [main] org.hibernate.dialect.Dialect [<init>] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 12:44:35  INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [initiateService] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 12:44:35  INFO [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [buildNativeEntityManagerFactory] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 12:44:35  WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [openEntityManagerInViewInterceptor] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09 12:44:35  INFO [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [logDataSources] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:supershopee'
+2023-01-09 12:44:36  INFO [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [<init>] - Adding welcome page: class path resource [static/index.html]
+2023-01-09 12:44:37  INFO [main] org.springframework.boot.test.mock.web.SpringBootMockServletContext [log] - Initializing Spring TestDispatcherServlet ''
+2023-01-09 12:44:37  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Initializing Servlet ''
+2023-01-09 12:44:37  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Completed initialization in 3 ms
+2023-01-09 12:44:37  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarted] - Started ProductControllerMvcTest in 5.927 seconds (JVM running for 7.154)
+2023-01-09 12:44:38  INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [destroy] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 12:44:38  INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [perform] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-01-09 12:44:38  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown initiated...
+2023-01-09 12:44:38  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown completed.
+2023-01-09 13:35:55  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarting] - Starting ProductControllerMvcTest using Java 17.0.2 on Ravindra with PID 27820 (started by Ravindra in F:\DevOps\product-service)
+2023-01-09 13:35:55  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStartupProfileInfo] - No active profile set, falling back to 1 default profile: "default"
+2023-01-09 13:35:55  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09 13:35:55  INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
+2023-01-09 13:35:57  INFO [main] org.hibernate.jpa.internal.util.LogHelper [logPersistenceUnitInformation] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09 13:35:57  INFO [main] org.hibernate.Version [logVersion] - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-09 13:35:57  INFO [main] org.hibernate.annotations.common.Version [<clinit>] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-09 13:35:57  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Starting...
+2023-01-09 13:35:57  INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Start completed.
+2023-01-09 13:35:57  INFO [main] org.hibernate.dialect.Dialect [<init>] - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09 13:35:58  INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [initiateService] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09 13:35:58  INFO [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [buildNativeEntityManagerFactory] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 13:35:58  WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [openEntityManagerInViewInterceptor] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09 13:35:58  INFO [main] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [logDataSources] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:supershopee'
+2023-01-09 13:35:59  INFO [main] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [<init>] - Adding welcome page: class path resource [static/index.html]
+2023-01-09 13:35:59  INFO [main] org.springframework.boot.test.mock.web.SpringBootMockServletContext [log] - Initializing Spring TestDispatcherServlet ''
+2023-01-09 13:35:59  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Initializing Servlet ''
+2023-01-09 13:35:59  INFO [main] org.springframework.test.web.servlet.TestDispatcherServlet [initServletBean] - Completed initialization in 1 ms
+2023-01-09 13:36:00  INFO [main] com.supershopee.product.controller.ProductControllerMvcTest [logStarted] - Started ProductControllerMvcTest in 5.405 seconds (JVM running for 6.744)
+2023-01-09 13:36:00  INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [destroy] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09 13:36:00  INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [perform] - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-01-09 13:36:00  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown initiated...
+2023-01-09 13:36:00  INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown completed.
