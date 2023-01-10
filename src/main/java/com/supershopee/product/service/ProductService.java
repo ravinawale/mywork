@@ -12,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.supershopee.product.entity.Product;
-import com.supershopee.product.exceptions.InternalApplicationException;
 import com.supershopee.product.model.ProductInfo;
 import com.supershopee.product.repository.ProductRepository;
 
@@ -54,7 +53,7 @@ public class ProductService {
 
 		List<Product> listProduct = productPage.getContent();
 
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> mapToProductInfo(prd));
 
 		return pipelineIfo.toList();
 	}
@@ -62,8 +61,13 @@ public class ProductService {
 	public List<ProductInfo> queryAllProducts() {
 		List<Product> listProduct = productRepository.findAll();
 
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> mapToProductInfo(prd));
 
 		return pipelineIfo.toList();
 	}
+	
+	private ProductInfo mapToProductInfo(Product prd ) {
+		return modelMapper.map(prd, ProductInfo.class);
+	}
+	
 }

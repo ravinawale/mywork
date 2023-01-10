@@ -65,7 +65,7 @@ public class ProductController {
 	 */
 	@PostMapping(value = "/saveProduct")
 	public ResponseEntity<ApiResponse<Optional<ProductInfo>>> productSave(@RequestBody ProductInfo productInfo)
-			throws NoSuchMessageException, InternalApplicationException {
+			throws NoSuchMessageException{
 
 		Optional<ProductInfo> pInfo = productService.save(productInfo);
 

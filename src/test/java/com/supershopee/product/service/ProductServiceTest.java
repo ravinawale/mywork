@@ -52,7 +52,7 @@ class ProductServiceTest {
         				   		   .containsExactly("101", "sugar",80.10);
     	////Product test case
 		Optional<ProductInfo> resultNotFound = productService.findProductInfo(NotFound.get());
-        assertThat(resultNotFound.isEmpty()).isTrue();
+        assertThat(resultNotFound).isEmpty();
         
 	}
 
