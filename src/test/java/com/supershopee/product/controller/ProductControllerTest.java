@@ -21,7 +21,6 @@ import com.supershopee.product.exceptions.InternalApplicationException;
 import com.supershopee.product.exceptions.InvalidInputException;
 import com.supershopee.product.exceptions.ProductNotFoundException;
 import com.supershopee.product.model.ApiResponse;
-import com.supershopee.product.model.PaginationResult;
 import com.supershopee.product.model.ProductInfo;
 import com.supershopee.product.service.ProductService;
 
