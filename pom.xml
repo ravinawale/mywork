@@ -17,13 +17,13 @@
 	<properties>
 		<java.version>17</java.version>
 		<swagger.version>3.0.0</swagger.version>
-		<sonar.exclusions>
+		<sonar.coverage.exclusions>
 			src/main/java/com/supershopee/product/config/CORSFilter.java
 			src/main/java/com/supershopee/product/config/SwaggerConfig.java
 			src/main/java/com/supershopee/product/config/AppConfiguration.java
 			src/main/java/com/supershopee/product/ProductserviceApplication.java
 			src/main/java/com/supershopee/product/ServletInitializer.java
-		</sonar.exclusions>
+		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
