@@ -18,12 +18,11 @@
 		<java.version>17</java.version>
 		<swagger.version>3.0.0</swagger.version>
 		<sonar.exclusions>
-				src/maincom/com/supershopee/product/entity/**/*,
-				src/maincom/com/supershopee/product/model/**/*,
-				src/maincom/com/supershopee/product/config/**/*,
-				src/maincom/supershopee/product/ProductserviceApplication.java,
-				src/maincom/supershopee/product/ServletInitializer.java,
-				src/main/java/com/supershopee/product/config/CORSFilter.java
+			src/main/java/com/supershopee/product/config/CORSFilter.java
+			src/main/java/com/supershopee/product/config/SwaggerConfig.java
+			src/main/java/com/supershopee/product/config/AppConfiguration.java
+			src/main/java/com/supershopee/product/ProductserviceApplication.java
+			src/main/java/com/supershopee/product/ServletInitializer.java
 		</sonar.exclusions>
 	</properties>
 	<dependencies>
