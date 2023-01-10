@@ -96,7 +96,7 @@ public class ProductController {
 	 * @return API Response - 
 	 */
 	@GetMapping(value = "/allproducts", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ApiResponse<?>> allProductsWithoutPagination() {
+	public ResponseEntity<ApiResponse<List<ProductInfo>>> allProductsWithoutPagination() {
 		List<ProductInfo> result = productService.queryAllProducts();
 		return new ResponseEntity<>(new ApiResponse<>(HttpStatus.OK.value(), "Success", result), HttpStatus.OK);
 	}

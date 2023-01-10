@@ -83,13 +83,17 @@ class ProductControllerTest {
 	void testAllProducts() {
 		
 		 when(productService.queryAllProducts()).thenReturn(getData());
+		 when(productService.queryProducts(1,5,10)).thenReturn(getData());
 		 
 		 ResponseEntity<ApiResponse<List<ProductInfo>>> result = productController.allProducts("",1);
 		 List<ProductInfo> pInfo = result.getBody().getResult();
 		 
-		 int expectedSize=2;
+		 ResponseEntity<ApiResponse<List<ProductInfo>>> resultAll = productController.allProductsWithoutPagination();
+		 List<ProductInfo> pInfoAll = resultAll.getBody().getResult();
 		 
+		 int expectedSize=2;
 		 assertThat(pInfo.size()).isEqualTo(expectedSize);
+		 assertThat(pInfoAll.size()).isEqualTo(expectedSize);
 	}
 	
 	Optional<ProductInfo> getProduct(String pCode) {
