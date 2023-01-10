@@ -17,6 +17,14 @@
 	<properties>
 		<java.version>17</java.version>
 		<swagger.version>3.0.0</swagger.version>
+		<sonar.exclusions>
+				src/maincom/com/supershopee/product/entity/**/*,
+				src/maincom/com/supershopee/product/model/**/*,
+				src/maincom/com/supershopee/product/config/**/*,
+				src/maincom/supershopee/product/ProductserviceApplication.java,
+				src/maincom/supershopee/product/ServletInitializer.java,
+				src/main/java/com/supershopee/product/config/CORSFilter.java
+		</sonar.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -101,18 +109,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-				    <systemPropertyVariables>
-				        <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
-				    </systemPropertyVariables>
-				    <excludes>
-				        <exclude>com/supershopee/product/entity/**/*</exclude>
-				        <exclude>com/supershopee/product/model/**/*</exclude>
-				        <exclude>com/supershopee/product/config/**/*</exclude>
-				        <exclude>com/supershopee/product/ProductserviceApplication.java</exclude>
-				        <exclude>com/supershopee/product/ServletInitializer.java</exclude>
-				    </excludes>
-				</configuration>
             </plugin>
 		</plugins>
 	</build>
