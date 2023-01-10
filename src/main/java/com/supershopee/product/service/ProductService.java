@@ -53,7 +53,7 @@ public class ProductService {
 
 		List<Product> listProduct = productPage.getContent();
 
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> mapToProductInfo(prd));
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
 
 		return pipelineIfo.toList();
 	}
@@ -61,13 +61,8 @@ public class ProductService {
 	public List<ProductInfo> queryAllProducts() {
 		List<Product> listProduct = productRepository.findAll();
 
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> mapToProductInfo(prd));
-
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		
 		return pipelineIfo.toList();
 	}
-	
-	private ProductInfo mapToProductInfo(Product prd ) {
-		return modelMapper.map(prd, ProductInfo.class);
-	}
-	
 }
