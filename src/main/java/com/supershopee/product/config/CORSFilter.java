@@ -25,7 +25,8 @@ public class CORSFilter implements Filter {
 	}
 	
 	private void addHeader(HttpServletResponse response,String name,String value) {
-		if(Optional.of(response.getHeader(name)).isEmpty()) {
+		Optional<String> userName = Optional.of(response.getHeader(name));
+		if(userName.isEmpty()) {
 			response.setHeader(name,value);
 		}
 	}

@@ -2,6 +2,7 @@ package com.supershopee.product.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.modelmapper.ModelMapper;
@@ -52,17 +53,20 @@ public class ProductService {
 		Page<Product> productPage = productRepository.findAll(pageable);
 
 		List<Product> listProduct = productPage.getContent();
-
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
-
-		return pipelineIfo.toList();
+		//Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		return mapList(listProduct,ProductInfo.class);
 	}
 
 	public List<ProductInfo> queryAllProducts() {
 		List<Product> listProduct = productRepository.findAll();
-
-		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
-		
-		return pipelineIfo.toList();
+		//Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		return mapList(listProduct,ProductInfo.class);
+	}
+	
+	<S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
+	    return source
+	    		.stream()
+	    		.map(element -> modelMapper.map(element, targetClass))
+	    		.collect(Collectors.toList());
 	}
 }
