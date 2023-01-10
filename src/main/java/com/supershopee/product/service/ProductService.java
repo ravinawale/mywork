@@ -51,15 +51,13 @@ public class ProductService {
 
 		Pageable pageable = PageRequest.of(page - 1, maxResult);
 		Page<Product> productPage = productRepository.findAll(pageable);
-
 		List<Product> listProduct = productPage.getContent();
-		//Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+		
 		return mapList(listProduct,ProductInfo.class);
 	}
 
 	public List<ProductInfo> queryAllProducts() {
 		List<Product> listProduct = productRepository.findAll();
-		//Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
 		return mapList(listProduct,ProductInfo.class);
 	}
 	
