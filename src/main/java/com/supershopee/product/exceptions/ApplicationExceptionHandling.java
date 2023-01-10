@@ -14,7 +14,7 @@ public class ApplicationExceptionHandling extends ResponseEntityExceptionHandler
 
 	@ExceptionHandler(InvalidInputException.class)
     public ResponseEntity<Object> handleInvalidInput(InvalidInputException exception) {
-        ExceptionResponse response = new ExceptionResponse();
+        var response = new ExceptionResponse();
         response.setDateTime(LocalDateTime.now());
         response.setMessage(exception.getMessage());
         return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
@@ -22,7 +22,7 @@ public class ApplicationExceptionHandling extends ResponseEntityExceptionHandler
 	
 	@ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<Object> handleProductNotFound(ProductNotFoundException exception) {
-        ExceptionResponse response = new ExceptionResponse();
+		var response = new ExceptionResponse();
         response.setDateTime(LocalDateTime.now());
         response.setMessage(exception.getMessage());
         return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
@@ -30,7 +30,7 @@ public class ApplicationExceptionHandling extends ResponseEntityExceptionHandler
 	
 	@ExceptionHandler(InternalApplicationException.class)
     public ResponseEntity<Object> internalApplicationException(InternalApplicationException exception) {
-        ExceptionResponse response = new ExceptionResponse();
+		var response = new ExceptionResponse();
         response.setDateTime(LocalDateTime.now());
         response.setMessage(exception.getMessage());
         return new ResponseEntity<>(response,HttpStatus.INTERNAL_SERVER_ERROR);

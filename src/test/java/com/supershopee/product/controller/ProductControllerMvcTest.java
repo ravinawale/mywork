@@ -29,7 +29,7 @@ import com.supershopee.product.service.ProductService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ProductControllerMvcTest {
+class ProductControllerMvcTest {
 
 	
 	@MockBean

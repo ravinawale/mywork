@@ -41,7 +41,7 @@ public class ProductController {
 	 * @throws ProductNotFoundException
 	 */
 	@GetMapping(value = "/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ApiResponse<?>> getProduct(@PathVariable(name = "code") Optional<String> pCode)
+	public ResponseEntity<ApiResponse<Optional<ProductInfo>>> getProduct(@PathVariable(name = "code") Optional<String> pCode)
 			throws ProductNotFoundException {
 		Optional<ProductInfo> productInfo = Optional.empty();
 
@@ -64,7 +64,7 @@ public class ProductController {
 	 * @throws InternalApplicationException
 	 */
 	@PostMapping(value = "/saveProduct")
-	public ResponseEntity<ApiResponse<?>> productSave(@RequestBody ProductInfo productInfo)
+	public ResponseEntity<ApiResponse<Optional<ProductInfo>>> productSave(@RequestBody ProductInfo productInfo)
 			throws NoSuchMessageException, InternalApplicationException {
 
 		Optional<ProductInfo> pInfo = productService.save(productInfo);
@@ -79,7 +79,7 @@ public class ProductController {
 	 * @return API Response - 
 	 */
 	@GetMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ApiResponse<?>> allProducts(@RequestParam(value = "name", defaultValue = "") String likeName,
+	public ResponseEntity<ApiResponse<List<ProductInfo>>> allProducts(@RequestParam(value = "name", defaultValue = "") String likeName,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
 
 		final int maxResult = 5;

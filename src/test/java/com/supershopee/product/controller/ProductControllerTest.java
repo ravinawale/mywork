@@ -48,7 +48,7 @@ class ProductControllerTest {
         when(productService.findProductInfo(pCode10.get())).thenReturn(getProduct(pCode10.get()));
         
         ////Product Present test case
-		ResponseEntity<ApiResponse<?>> result101 = productController.getProduct(pCode101);
+		ResponseEntity<ApiResponse<Optional<ProductInfo>>> result101 = productController.getProduct(pCode101);
 		Optional<?> pInfo = (Optional<?>) result101.getBody().getResult();
 		
         assertThat(result101.getStatusCodeValue()).isEqualTo(200);
@@ -59,7 +59,7 @@ class ProductControllerTest {
         assertThrows(ProductNotFoundException.class, new Executable() {
             @Override
             public void execute() throws Throwable {
-            	ResponseEntity<ApiResponse<?>> result101 = productController.getProduct(pCode10);
+            	ResponseEntity<ApiResponse<Optional<ProductInfo>>> result101 = productController.getProduct(pCode10);
             }
         });
     }
@@ -71,7 +71,7 @@ class ProductControllerTest {
 		
 		when(productService.save(productInfo.get())).thenReturn(productInfo);
 		
-		ResponseEntity<ApiResponse<?>> result = productController.productSave(productInfo.get());
+		ResponseEntity<ApiResponse<Optional<ProductInfo>>> result = productController.productSave(productInfo.get());
 		Optional<?> pInfo = (Optional<?>) result.getBody().getResult();
 		
 		assertThat(result.getStatusCodeValue()).isEqualTo(200);
@@ -82,10 +82,10 @@ class ProductControllerTest {
 	@Test
 	void testAllProducts() {
 		
-		 when(productService.queryProducts(1,5,10)).thenReturn(getData());
+		 when(productService.queryAllProducts()).thenReturn(getData());
 		 
-		 ResponseEntity<ApiResponse<?>> result = productController.allProducts("",1);
-		 List<?> pInfo = (List<?>) result.getBody().getResult();
+		 ResponseEntity<ApiResponse<List<ProductInfo>>> result = productController.allProducts("",1);
+		 List<ProductInfo> pInfo = result.getBody().getResult();
 		 
 		 int expectedSize=2;
 		 

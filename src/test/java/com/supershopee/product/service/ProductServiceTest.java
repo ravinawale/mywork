@@ -46,14 +46,13 @@ class ProductServiceTest {
         when(productRepository.findProduct(NotFound.get())).thenReturn(getProduct(NotFound.get()));
         when(modelMapper.map(ArgumentMatchers.any(),ArgumentMatchers.any())).thenReturn(new ProductInfo("101", "sugar",80.10));
         
-       
         ////Product test case
 		Optional<ProductInfo> result101 = productService.findProductInfo(pCode101.get());
         assertThat(result101.get()).extracting("code", "name", "price")
         				   		   .containsExactly("101", "sugar",80.10);
     	////Product test case
 		Optional<ProductInfo> resultNotFound = productService.findProductInfo(NotFound.get());
-        assertThat(resultNotFound.isEmpty()).isEqualTo(true);
+        assertThat(resultNotFound.isEmpty()).isTrue();
         
 	}
 

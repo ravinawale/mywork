@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.supershopee.product.entity.Product;
 import com.supershopee.product.exceptions.InternalApplicationException;
-import com.supershopee.product.model.PaginationResult;
 import com.supershopee.product.model.ProductInfo;
 import com.supershopee.product.repository.ProductRepository;
 
@@ -42,11 +41,7 @@ public class ProductService {
 	public Optional<ProductInfo> save(ProductInfo productInfo) throws InternalApplicationException {
 
 		Optional<Product> product = Optional.empty();
-		try {
-			product = Optional.of(productRepository.saveAndFlush(modelMapper.map(productInfo, Product.class)));
-		} catch (Exception e) {
-			throw new InternalApplicationException(e.getMessage());
-		}
+		product = Optional.of(productRepository.saveAndFlush(modelMapper.map(productInfo, Product.class)));
 		
 		return Optional.of(new ProductInfo(product.get()));
 	}
@@ -58,20 +53,16 @@ public class ProductService {
         
         List<Product> listProduct = productPage.getContent();
         
-        List<ProductInfo> productInfoList = listProduct.stream()
+        return listProduct.stream()
         		   .map(prd -> modelMapper.map(prd, ProductInfo.class))
         		   .toList();
-        
-        return productInfoList;
     }
     
     public List<ProductInfo> queryAllProducts() {
         List<Product> listProduct = productRepository.findAll();
         
-        List<ProductInfo> productInfoList = listProduct.stream()
+        return listProduct.stream()
         		   .map(prd -> modelMapper.map(prd, ProductInfo.class))
         		   .toList();
-        
-        return productInfoList;
     }
 }

@@ -20,8 +20,9 @@
 		<sonar.exclusions>
 				com/supershopee/product/entity/**/*,
 				com/supershopee/product/model/**/*
-				**/ProductserviceApplication.java,
-				**/AppConfiguration.java
+				com/supershopee/product/config/**/*
+				com/supershopee/product/ProductserviceApplication.java,
+				com/supershopee/product/ServletInitializer.java
 		</sonar.exclusions>
 	</properties>
 	<dependencies>
