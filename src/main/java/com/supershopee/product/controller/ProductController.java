@@ -82,8 +82,8 @@ public class ProductController {
 	public ResponseEntity<ApiResponse<List<ProductInfo>>> allProducts(@RequestParam(value = "name", defaultValue = "") String likeName,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
 
-		final int maxResult = 5;
-		final int maxNavigationPage = 10;
+		final var maxResult = 5;
+		final var maxNavigationPage = 10;
 
 		List<ProductInfo> result = productService.queryProducts(page, maxResult, maxNavigationPage);
 

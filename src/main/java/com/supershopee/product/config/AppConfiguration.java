@@ -11,13 +11,15 @@ public class AppConfiguration {
 
 	@Bean
     public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource
+        var messageSource
                 = new ReloadableResourceBundleMessageSource();
+        
         messageSource.setBasenames(
                 "classpath:api_error_messages",
                 "classpath:api_response_messages"
         );
         messageSource.setDefaultEncoding("UTF-8");
+        
         return messageSource;
     }
 	

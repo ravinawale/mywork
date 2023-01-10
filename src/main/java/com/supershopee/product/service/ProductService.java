@@ -2,6 +2,7 @@ package com.supershopee.product.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,49 +21,49 @@ public class ProductService {
 
 	@Autowired
 	private ProductRepository productRepository;
-	
-	@Autowired
-    private ModelMapper modelMapper;
-	
-    public Optional<Product> findProduct(String code) {
-        return productRepository.findProduct(code);
-    }
-    
-    public Optional<ProductInfo> findProductInfo(String code) {
-    	
-    	Optional<Product> product = findProduct(code);
-        if (product.isPresent()) {
-        	return Optional.of(modelMapper.map(product.get(), ProductInfo.class));
-        }else {
-        	return Optional.empty();
-        }
-    }
- 
-	public Optional<ProductInfo> save(ProductInfo productInfo) throws InternalApplicationException {
 
-		Optional<Product> product = Optional.empty();
-		product = Optional.of(productRepository.saveAndFlush(modelMapper.map(productInfo, Product.class)));
-		
+	@Autowired
+	private ModelMapper modelMapper;
+
+	public Optional<Product> findProduct(String code) {
+		return productRepository.findProduct(code);
+	}
+
+	public Optional<ProductInfo> findProductInfo(String code) {
+
+		Optional<Product> product = findProduct(code);
+		if (product.isPresent()) {
+			return Optional.of(modelMapper.map(product.get(), ProductInfo.class));
+		} else {
+			return Optional.empty();
+		}
+	}
+
+	public Optional<ProductInfo> save(ProductInfo productInfo) {
+
+		Optional<Product> product = Optional
+				.of(productRepository.saveAndFlush(modelMapper.map(productInfo, Product.class)));
+
 		return Optional.of(new ProductInfo(product.get()));
 	}
-    
-    public List<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage) {
-        
-    	Pageable pageable = PageRequest.of(page - 1, maxResult);
-        Page<Product> productPage = productRepository.findAll(pageable);
-        
-        List<Product> listProduct = productPage.getContent();
-        
-        return listProduct.stream()
-        		   .map(prd -> modelMapper.map(prd, ProductInfo.class))
-        		   .toList();
-    }
-    
-    public List<ProductInfo> queryAllProducts() {
-        List<Product> listProduct = productRepository.findAll();
-        
-        return listProduct.stream()
-        		   .map(prd -> modelMapper.map(prd, ProductInfo.class))
-        		   .toList();
-    }
+
+	public List<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage) {
+
+		Pageable pageable = PageRequest.of(page - 1, maxResult);
+		Page<Product> productPage = productRepository.findAll(pageable);
+
+		List<Product> listProduct = productPage.getContent();
+
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+
+		return pipelineIfo.toList();
+	}
+
+	public List<ProductInfo> queryAllProducts() {
+		List<Product> listProduct = productRepository.findAll();
+
+		Stream<ProductInfo> pipelineIfo = listProduct.stream().map(prd -> modelMapper.map(prd, ProductInfo.class));
+
+		return pipelineIfo.toList();
+	}
 }
